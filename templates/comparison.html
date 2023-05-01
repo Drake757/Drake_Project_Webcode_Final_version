@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript" src="https://cdn.bootcss.com/echarts/4.7.0/echarts.min.js"></script>
+<div align="center">
+    <div id="container" style="width: 80%;height:600px;"></div>
+</div>
+<div id="G1average" d="{{G1average}}" style="display:none"></div>
+<div id="G2average" d="{{G2average}}" style="display:none"></div>
+<div id="G3average" d="{{G3average}}" style="display:none"></div>
+<div id="G1" d="{{x}}" style="display:none"></div>
+<div id="G2" d="{{y}}" style="display:none"></div>
+<div id="G3" d="{{z}}" style="display:none"></div>
+<script>
+var G1average = document.getElementById('G1average').getAttribute('d');
+var G2average = document.getElementById('G2average').getAttribute('d');
+var G3average = document.getElementById('G3average').getAttribute('d');
+var G1 = document.getElementById('G1').getAttribute('d');
+var G2 = document.getElementById('G2').getAttribute('d');
+var G3 = document.getElementById('G3').getAttribute('d');
+var data = ["G1", "G2", "G3"];
+		var ks = [
+			{
+				name: 'Average',
+				type: 'line',
+				data: [G1average,G2average,G3average]
+			},
+			{
+				name: 'Score',
+				type: 'line',
+				data: [G1,G2,G3]
+			}
+
+		];
+		load(data, ks,'Comparison of Academic Performance');
+		function load(data, ks,title) {
+			var myChart = echarts.init(document.getElementById('container'));
+
+			var option = {
+				title: {
+					text: title,
+					left:'center'
+
+				},
+				tooltip: {
+					trigger: 'axis'
+				},
+				legend: {
+					data: ['Comparison of Academic Performance']
+				},
+				grid: {
+					left: '3%',
+					right: '4%',
+					bottom: '3%',
+					containLabel: true
+				},
+				toolbox: {
+					show: true,
+					feature: {
+						dataView: {
+							readOnly: false
+						}, //数据视图
+						magicType: {
+							type: ['line', 'bar']
+						},  //切换为折线图，切换为柱状图
+						restore: {},  //还原
+						saveAsImage: {}   //保存为图片
+					}
+				},
+				xAxis: {
+					type: 'category',
+					boundaryGap: false,
+					data: data
+				},
+				yAxis: {
+					type: 'value'
+				},
+				series: ks
+			};
+
+			myChart.setOption(option, true);
+		}
+</script>
+
+
+</body>
+</html>

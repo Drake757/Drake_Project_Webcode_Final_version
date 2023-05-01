@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="UTF-8">
+<title>Stripe Like CSS Only Menu</title>
+
+<script src="https://kit.fontawesome.com/628c8d2499.js" crossorigin="anonymous"></script><!--图标库-->
+
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="static/teacherpage.css" type="text/css" /><!--核心样式-->
+   <style type="text/css">
+        table
+        {
+            border-collapse: collapse;
+             text-align: center;
+            position:absolute;
+             top:200px;
+            width: 1440px;
+            height: 10em;
+            z-index:-9999
+        }
+        table td, table th
+        {
+            border: 1px solid #cad9ea;
+            color: #666;
+            height: 30px;
+        }
+        table thead th
+        {
+            background-color: #CCE8EB;
+            width: 200px;
+        }
+        table tr:nth-child(odd)
+        {
+            background: #fff;
+        }
+        table tr:nth-child(even)
+        {
+            background: #F5FAFA;
+        }
+    </style>
+       <style>
+
+a{
+	text-decoration: none;
+    color: #000000;
+}
+</style>
+
+
+</head>
+<body>
+<nav id="menu">
+	<div class="menu-item">
+		<div class="menu-text">
+			<a href="#">Log or Sign</a>
+		</div>
+		<div class="sub-menu">
+			<div class="icon-box">
+				<div class="icon"><i class="fal fa-wind-turbine"></i></div>
+				<div class="text">
+                    <div class="title"><a href="#" id="none" >Log in</a>><i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">Edit your code while slowing down time.</div>
+				</div>
+			</div>
+			<div class="icon-box">
+				<div class="icon"><i class="fal fa-lightbulb-on"></i></div>
+				<div class="text">
+                    <div class="title"><a href="#" id="none">Sign In</a>> <i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">Think of an idea, and have an AI create it.</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="menu-item highlight">
+		<div class="menu-text">
+			<a href="#">Services</a>
+		</div>
+		<div class="sub-menu double">
+			<div class="icon-box gb a">
+				<div class="icon"><i class="far fa-question-circle"></i></div>
+				<div class="text">
+                    <div class="title"><a href="{{ url_for('overall') }}">Display</a> <i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">Display Academic Performance</div>
+				</div>
+			</div>
+			<div class="icon-box gb b">
+				<div class="icon"><i class="far fa-chess-rook"></i></div>
+				<div class="text">
+                    <div class="title"><a href="{{ url_for('search') }}">Search </a><i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">For Teacher to Check </div>
+				</div>
+			</div>
+			<div class="sub-menu-holder"></div>
+		</div>
+	</div>
+<div class="menu-item highlight">
+		<div class="menu-text">
+			<a href="#">Forum</a>
+		</div>
+		<div class="sub-menu double">
+			<div class="icon-box gb a">
+				<div class="icon"><i class="far fa-question-circle"></i></div>
+				<div class="text">
+                    <div class="title"><a href="{{ url_for('goClaim') }}">Go to Forum </a>> <i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">Read Claims</div>
+				</div>
+			</div>
+			<div class="icon-box gb b">
+				<div class="icon"><i class="far fa-users-class"></i></div>
+				<div class="text">
+                    <div class="title"><a href="{{ url_for('Checkreply') }}">Reply</a> <i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">Check your reply</div>
+				</div>
+			</div>
+			<div class="icon-box gb c">
+				<div class="icon"><i class="far fa-school"></i></div>
+				<div class="text">
+                    <div class="title"><a href="{{ url_for('Chat') }}">Chat </a><i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">Predict Academic Performance</div>
+				</div>
+			</div>
+			<div class="bottom-container">
+				Ready to Start? <a href="{{ url_for('login') }}"> Go to log in</a>
+			</div>
+			<div class="sub-menu-holder"></div>
+		</div>
+	</div>
+	<div class="menu-item">
+		<div class="menu-text">
+			<a href="#">Profile</a>
+		</div>
+		<div class="sub-menu">
+			<div class="icon-box">
+				<div class="icon"><i class="far fa-satellite"></i></div>
+				<div class="text">
+					<div class="title">Porfile <i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">See your profile</div>
+				</div>
+			</div>
+			<div class="icon-box">
+				<div class="icon"><i class="fab fa-twitter-square"></i></div>
+				<div class="text">
+                    <div class="title"><a href="{{ url_for('returnteacher') }}">Homepage </a><i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">Go to profile</div>
+				</div>
+			</div>
+			<div class="sub-menu-holder"></div>
+		</div>
+	</div>
+	<div id="sub-menu-container">
+		<div id="sub-menu-holder">
+			<div id="sub-menu-bottom">
+
+			</div>
+		</div>
+	</div>
+    {% if x==1 %}
+<div style="display:flex;max-width:800px;height:60px;width:100%;align-items:center;border-radius:8px;background-color:#fff;z-index:-9999">
+    <button type="submit" style="background:none;border:none;font-size:16px;color:#7d8893;padding:16px;">
+        <span class="oi oi-magnifying-glass"></span>
+    <form  method="post" action='Search' >
+
+        <input type="text" name="search" placeholder="search for students" style="flex:auto;border:none;background:transparent;font-size:16px;outline:none;min-width:0;text-overflow:ellipsis;"  required>
+
+    </form>
+
+    </button>
+</div>
+{% endif %}
+
+{% if x==2 %}
+<table  class="table">
+<tr>
+    <th>student_id</th>
+    <th>sex</th>
+    <th>Medu</th>
+    <th>Fedu</th>
+    <th>study_time</th>
+    <th>failures</th>
+    <th>paid</th>
+    <th>higer</th>
+    <th>freetime</th>
+    <th>goout</th>
+    <th>absences</th>
+    <th>G1</th>
+    <th>G2</th>
+    <th>G3</th>
+</tr>
+<tr>
+<td>{{student_data[0]}}</td>
+
+<td>{{student_data[1]}}</td>
+
+<td>{{student_data[2]}}</td>
+
+<td>{{student_data[3]}}</td>
+
+<td>{{student_data[4]}}</td>
+
+<td>{{student_data[5]}}</td>
+
+<td>{{student_data[6]}}</td>
+
+<td>{{student_data[7]}}</td>
+
+<td>{{student_data[8]}}</td>
+
+<td>{{student_data[9]}}</td>
+
+<td>{{student_data[10]}}</td>
+
+<td>{{student_data[11]}}</td>
+
+<td>{{student_data[12]}}</td>
+
+<td>{{student_data[13]}}</td>
+</tr>
+</table>
+{% endif %}
+</nav>
+</body>
+</html>

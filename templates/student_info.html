@@ -1,0 +1,111 @@
+<!doctype html>
+<html lang="en">
+<head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css"
+          integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+    <title>Hello, world!</title>
+    <style type="text/css">
+        table
+        {
+            border-collapse: collapse;
+             text-align: center;
+            position:absolute;
+             top:200px;
+            width: 1440px;
+            height: 10em;
+            z-index:-9999
+        }
+        table td, table th
+        {
+            border: 1px solid #cad9ea;
+            color: #666;
+            height: 30px;
+            width: 100px;
+        }
+        table thead th
+        {
+            background-color: #CCE8EB;
+            width: 200px;
+        }
+        table tr:nth-child(odd)
+        {
+            background: #fff;
+        }
+        table tr:nth-child(even)
+        {
+            background: #F5FAFA;
+        }
+    </style>
+</head>
+<body>
+<div style=" position:absolute;
+             top:20px;
+            left: 650px;
+            z-index:-9999">
+    <h3>Students Info</h3>
+</div>
+
+                    <table class="table" >
+                        <thead>
+                        <tr>
+                            <td>Student_id</td>
+                            <td>Sex</td>
+                            <td>Medu</td>
+                            <td>Fedu</td>
+                            <td>Studytime</td>
+                            <td>Failures</td>
+                            <td>Paid</td>
+                            <td>Higer</td>
+                            <td>Freetime</td>
+                            <td>Goout</td>
+                            <td>Abcences</td>
+                            <td>G1</td>
+                            <td>G2</td>
+                            <td>G3</td>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        {% for i in student_info %}
+                            <tr>
+                                {% for j in i %}
+                                    <td>{{ j }}</td>
+                                {% endfor %}
+                            </tr>
+                        {% endfor %}
+                        </tbody>
+                    </table>
+
+<div>
+   <form method="post" action='reply'>
+    <TABLE  border=1 width="80%" rules=none>
+
+            <tr style="text-align:center">
+            </tr>
+                <tr style="text-align:center">
+                <td><input type="text" name="reply">
+            </tr>
+            <tr style="text-align:center">
+                <td><input type="submit" name="rcontent"  value="reply">
+            </tr>
+    </TABLE>
+    </form>
+</div>
+<!-- Optional JavaScript -->
+<!-- jQuery first, then Popper.js, then Bootstrap JS -->
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
+        integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
+        crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js"
+        integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49"
+        crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js"
+        integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy"
+        crossorigin="anonymous"></script>
+</body>
+</html>

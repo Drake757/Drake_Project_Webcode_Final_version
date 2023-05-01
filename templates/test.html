@@ -1,0 +1,278 @@
+<!DOCTYPE html>
+<html lang="en" >
+<head>
+<meta charset="UTF-8">
+<title>Stripe Like CSS Only Menu</title>
+
+<script src="https://kit.fontawesome.com/628c8d2499.js" crossorigin="anonymous"></script>
+
+<link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
+
+<link rel="stylesheet" href="static/test.css" type="text/css" />
+    <style>
+
+a{
+	text-decoration: none;
+    color: #000000;
+}
+</style>
+
+</head>
+<body>
+{% if x== 0 %}
+<nav id="menu">
+	<div class="menu-item">
+		<div class="menu-text">
+			<a href="#">Log or Sign</a>
+		</div>
+		<div class="sub-menu">
+			<div class="icon-box">
+				<div class="icon"><i class="fal fa-wind-turbine"></i></div>
+				<div class="text">
+                    <div class="title"><a href="{{ url_for('login') }}" id="none" >Log in</a>><i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">Log in your account</div>
+				</div>
+			</div>
+			<div class="icon-box">
+				<div class="icon"><i class="fal fa-lightbulb-on"></i></div>
+				<div class="text">
+                    <div class="title"><a href="{{ url_for('signin') }}" id="none">Sign In</a>> <i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">Sign in a new account</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="menu-item highlight">
+		<div class="menu-text">
+			<a href="#">Services</a>
+		</div>
+		<div class="sub-menu double">
+			<div class="icon-box gb a">
+				<div class="icon"><i class="far fa-question-circle"></i></div>
+				<div class="text">
+					<div class="title">Display <i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">Display Academic Performance</div>
+				</div>
+			</div>
+			<div class="icon-box gb b">
+				<div class="icon"><i class="far fa-users-class"></i></div>
+				<div class="text">
+					<div class="title">Comparison <i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">For Students' Development</div>
+				</div>
+			</div>
+			<div class="icon-box gb c">
+				<div class="icon"><i class="far fa-school"></i></div>
+				<div class="text">
+					<div class="title">Prediction <i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">Predict Academic Performance</div>
+				</div>
+			</div>
+			<div class="icon-box gb d">
+				<div class="icon"><i class="far fa-chess-rook"></i></div>
+				<div class="text">
+					<div class="title">Search <i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">For Teacher to Check </div>
+				</div>
+			</div>
+			<div class="bottom-container">
+				Ready to Start? <a href="{{ url_for('login') }}">Go to log in</a>
+			</div>
+			<div class="sub-menu-holder"></div>
+		</div>
+	</div>
+<div class="menu-item highlight">
+		<div class="menu-text">
+			<a href="#">Forum</a>
+		</div>
+		<div class="sub-menu double">
+			<div class="icon-box gb a">
+				<div class="icon"><i class="far fa-question-circle"></i></div>
+				<div class="text">
+					<div class="title">Go to Forum <i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">Read Claims</div>
+				</div>
+			</div>
+			<div class="icon-box gb b">
+				<div class="icon"><i class="far fa-users-class"></i></div>
+				<div class="text">
+					<div class="title">Reply <i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">Check your reply</div>
+				</div>
+			</div>
+			<div class="icon-box gb c">
+				<div class="icon"><i class="far fa-school"></i></div>
+				<div class="text">
+					<div class="title">Prediction <i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">Predict Academic Performance</div>
+				</div>
+			</div>
+			<div class="bottom-container">
+				Ready to Start? <a href="{{ url_for('login') }}"> Go to log in</a>
+			</div>
+			<div class="sub-menu-holder"></div>
+		</div>
+	</div>
+	<div class="menu-item">
+		<div class="menu-text">
+			<a href="#">Homepage</a>
+		</div>
+		<div class="sub-menu">
+			<div class="icon-box">
+				<div class="icon"><i class="far fa-satellite"></i></div>
+				<div class="text">
+					<div class="title">Log out <i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">Log out your account</div>
+				</div>
+			</div>
+			<div class="icon-box">
+				<div class="icon"><i class="fab fa-twitter-square"></i></div>
+				<div class="text">
+					<div class="title">Homepage <i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">Go to homepage</div>
+				</div>
+			</div>
+			<div class="sub-menu-holder"></div>
+		</div>
+	</div>
+	<div id="sub-menu-container">
+		<div id="sub-menu-holder">
+			<div id="sub-menu-bottom">
+
+			</div>
+		</div>
+	</div>
+    <div name = "title" class="maintitle" >
+    <p>Analysing the Academic Performance of students System
+    </p>
+    </div>
+</nav>
+{% endif %}
+
+
+{% if x== 1 %}
+<nav id="menu">
+	<div class="menu-item">
+		<div class="menu-text">
+			<a href="#">Log or Sign</a>
+		</div>
+		<div class="sub-menu">
+			<div class="icon-box">
+				<div class="icon"><i class="fal fa-wind-turbine"></i></div>
+				<div class="text">
+                    <div class="title"><a href="#" id="none" >Log in</a>><i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">Edit your code while slowing down time.</div>
+				</div>
+			</div>
+			<div class="icon-box">
+				<div class="icon"><i class="fal fa-lightbulb-on"></i></div>
+				<div class="text">
+                    <div class="title"><a href="#" id="none">Sign In</a>> <i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">Think of an idea, and have an AI create it.</div>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="menu-item highlight">
+		<div class="menu-text">
+			<a href="#">Services</a>
+		</div>
+		<div class="sub-menu double">
+			<div class="icon-box gb a">
+				<div class="icon"><i class="far fa-question-circle"></i></div>
+				<div class="text">
+					<div class="title">Display <i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">Display Academic Performance</div>
+				</div>
+			</div>
+			<div class="icon-box gb b">
+				<div class="icon"><i class="far fa-chess-rook"></i></div>
+				<div class="text">
+					<div class="title">Search <i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">For Teacher to Check </div>
+				</div>
+			</div>
+			<div class="bottom-container">
+				Ready to Start? <a href="{{ url_for('login') }}">Go to log in</a>
+			</div>
+			<div class="sub-menu-holder"></div>
+		</div>
+	</div>
+<div class="menu-item highlight">
+		<div class="menu-text">
+			<a href="#">Forum</a>
+		</div>
+		<div class="sub-menu double">
+			<div class="icon-box gb a">
+				<div class="icon"><i class="far fa-question-circle"></i></div>
+				<div class="text">
+					<div class="title">Go to Forum <i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">Read Claims</div>
+				</div>
+			</div>
+			<div class="icon-box gb b">
+				<div class="icon"><i class="far fa-users-class"></i></div>
+				<div class="text">
+					<div class="title">Reply <i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">Check your reply</div>
+				</div>
+			</div>
+			<div class="icon-box gb c">
+				<div class="icon"><i class="far fa-school"></i></div>
+				<div class="text">
+					<div class="title">Prediction <i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">Predict Academic Performance</div>
+				</div>
+			</div>
+			<div class="icon-box gb d">
+				<div class="icon"><i class="far fa-chess-rook"></i></div>
+				<div class="text">
+					<div class="title">Search <i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">For Teacher to Check </div>
+				</div>
+			</div>
+			<div class="bottom-container">
+				Ready to Start? <a href="{{ url_for('login') }}"> Go to log in</a>
+			</div>
+			<div class="sub-menu-holder"></div>
+		</div>
+	</div>
+	<div class="menu-item">
+		<div class="menu-text">
+			<a href="#">Profile</a>
+		</div>
+		<div class="sub-menu">
+			<div class="icon-box">
+				<div class="icon"><i class="far fa-satellite"></i></div>
+				<div class="text">
+					<div class="title">Porfile <i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">See your profile</div>
+				</div>
+			</div>
+			<div class="icon-box">
+				<div class="icon"><i class="fab fa-twitter-square"></i></div>
+				<div class="text">
+					<div class="title">Homepage <i class="far fa-arrow-right"></i></div>
+					<div class="sub-text">Go to profile</div>
+				</div>
+			</div>
+			<div class="sub-menu-holder"></div>
+		</div>
+	</div>
+	<div id="sub-menu-container">
+		<div id="sub-menu-holder">
+			<div id="sub-menu-bottom">
+
+			</div>
+		</div>
+	</div>
+    <div name = "title" class="maintitle" >
+    <p>Analysing the Academic Performance of students System
+    </p>
+    </div>
+</nav>
+{% endif %}
+
+
+</body>
+</html>

@@ -1,0 +1,113 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript" src="https://cdn.bootcss.com/echarts/4.7.0/echarts.min.js"></script>
+<div align="center">
+    <div id="container" style="width: 80%;height:600px;"></div>
+</div>
+<div id="G1_0_3" d="{{G1_0_3}}" style="display:none"></div>
+<div id="G1_4_7" d="{{G1_4_7}}" style="display:none"></div>
+<div id="G1_8_11" d="{{G1_8_11}}" style="display:none"></div>
+<div id="G1_12_15" d="{{G1_12_15}}" style="display:none"></div>
+<div id="G1_16_20" d="{{G1_16_20}}" style="display:none"></div>
+<div id="G2_0_3" d="{{G2_0_3}}" style="display:none"></div>
+<div id="G2_4_7" d="{{G2_0_3}}" style="display:none"></div>
+<div id="G2_8_11" d="{{G2_8_11}}" style="display:none"></div>
+<div id="G2_12_15" d="{{G2_12_15}}" style="display:none"></div>
+<div id="G2_16_20" d="{{G2_16_20}}" style="display:none"></div>
+<div id="G3_0_3" d="{{G3_0_3}}" style="display:none"></div>
+<div id="G3_4_7" d="{{G3_4_7}}" style="display:none"></div>
+<div id="G3_8_11" d="{{G3_8_11}}" style="display:none"></div>
+<div id="G3_12_15" d="{{G3_12_15}}" style="display:none"></div>
+<div id="G3_16_20" d="{{G3_16_20}}" style="display:none"></div>
+<script>
+var G1_0_3 = document.getElementById('G1_0_3').getAttribute('d');
+var G1_4_7 = document.getElementById('G1_4_7').getAttribute('d');
+var G1_8_11 = document.getElementById('G1_8_11').getAttribute('d');
+var G1_12_15 = document.getElementById('G1_12_15').getAttribute('d');
+var G1_16_20 = document.getElementById('G1_16_20').getAttribute('d');
+var G2_0_3 = document.getElementById('G2_0_3').getAttribute('d');
+var G2_4_7 = document.getElementById('G2_4_7').getAttribute('d');
+var G2_8_11 = document.getElementById('G2_8_11').getAttribute('d');
+var G2_12_15 = document.getElementById('G2_12_15').getAttribute('d');
+var G2_16_20 = document.getElementById('G2_16_20').getAttribute('d');
+var G3_0_3 = document.getElementById('G3_0_3').getAttribute('d');
+var G3_4_7 = document.getElementById('G3_4_7').getAttribute('d');
+var G3_8_11 = document.getElementById('G3_8_11').getAttribute('d');
+var G3_12_15 = document.getElementById('G3_12_15').getAttribute('d');
+var G3_16_20 = document.getElementById('G3_16_20').getAttribute('d');
+var data = ["0_3", "4_7", "8_11","12_15","16_20"];
+		var ks = [
+			{
+				name: 'TOTAL',
+				type: 'line',
+				data: [G1_0_3,G1_4_7,G1_8_11,G1_12_15,G1_16_20]
+			},
+			{
+				name: 'TOTAL',
+				type: 'line',
+				data: [G2_0_3,G2_4_7,G2_8_11,G2_12_15,G2_16_20]
+			},
+			{
+				name: 'TOTAL',
+				type: 'line',
+				data: [G3_0_3,G3_4_7,G3_8_11,G3_12_15,G3_16_20]
+			} ,
+		];
+		load(data, ks,'Display of All Students Academic Performance');
+function load(data, ks,title) {
+			var myChart = echarts.init(document.getElementById('container'));
+
+			var option = {
+				title: {
+					text: title,
+					left:'center'
+
+				},
+				tooltip: {
+					trigger: 'axis'
+				},
+				legend: {
+					data: ['Display of Academic Performance']
+				},
+				grid: {
+					left: '3%',
+					right: '4%',
+					bottom: '3%',
+					containLabel: true
+				},
+				toolbox: {
+					show: true,
+					feature: {
+						dataView: {
+							readOnly: false
+						}, //数据视图
+						magicType: {
+							type: ['line', 'bar']
+						},  //切换为折线图，切换为柱状图
+						restore: {},  //还原
+						saveAsImage: {}   //保存为图片
+					}
+				},
+				xAxis: {
+					type: 'category',
+					boundaryGap: false,
+					data: data
+				},
+				yAxis: {
+					type: 'value'
+				},
+				series: ks
+			};
+
+			myChart.setOption(option, true);
+		}
+</script>
+
+
+</body>
+</html>

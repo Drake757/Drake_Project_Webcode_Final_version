@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style type="text/css">
+        table{
+        width: 100%;
+        border-collapse: collapse;
+    }
+
+    table caption{
+        font-size: 2em;
+        font-weight: bold;
+        margin: 1em 0;
+    }
+
+    th,td{
+        border: 1px solid #999;
+        text-align: center;
+        padding: 20px 0;
+}
+
+    table thead tr{
+        background-color: #008c8c;
+        color: #fff;
+    }
+
+    table tbody tr:nth-child(odd){
+        background-color: #eee;
+    }
+
+    table tbody tr:hover{
+        background-color: #ccc;
+    }
+
+    table tbody tr td:first-child{
+        color: #f40;
+    }
+
+    table tfoot tr td{
+        text-align: right;
+        padding-right: 20px;
+    }
+    </style>
+</head>
+<body>
+<div name = "post" id="post" >
+    <p style="text-align:center">Claim</p>
+</div >
+<div style="text-align:center">
+<form method="post" action='Claimreply'>
+
+    <p>{{ content[0][0] }}</p></br>
+    <textarea rows="20" cols="200">
+        {{content[0][1]}}。
+</textarea></br>
+
+                <input  type="text" name="reply" style="width: 1000px;height: 25px"></br>
+
+                <input style="text-align:center" type="submit" name="rcontent"  value="Reply">
+
+    </form>
+</div >
+<div>
+    <table>
+    <tr>
+        <td>User</td>
+        <td>Cotent</td>
+        <td>Time</td>
+    </tr>
+
+    {% for i in reply %}
+        <tr>
+        <td>{{ i[0]}}</td>
+        <td>{{ i[2]}}</td>
+        <td>{{ i[1]}}</td>
+
+{#            <td><input  type="text" name="reply" style="width: 200px;height: 10px"></td>></br>#}
+{##}
+{#            <td><input style="text-align:center" type="submit" name="rcontent"  value="Reply"></td>#}
+        </tr>
+
+    {% endfor %}
+
+    </table>
+</div>
+</body>
+</html>

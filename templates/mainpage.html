@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Main Page</title>
+
+    <style type="text/css">
+        a{color: black;}
+		#none{
+			text-decoration: none;
+		}
+
+        ul
+{
+list-style-type:none;
+margin:0;
+padding:0;
+}
+li a:link,li a:visited
+{
+display:block;
+font-weight:bold;
+color:#FFFFFF;
+background-color:#bebebe;
+width:120px;
+text-align:center;
+padding:4px;
+text-decoration:none;
+text-transform:uppercase;
+}
+li a:hover,li a:active
+{
+background-color:#cc0000;
+}
+
+	</style>
+    <script type="text/javascript">
+        function decodeMessage(){
+
+            var data1 = document.getElementById('data1').getAttribute('d');
+
+
+            document.getElementById("table_div").innerHTML=<p>+{data1[300]}+</p>;
+
+
+}
+
+</script>
+</head>
+
+<body background="/static/images/R-C.png"
+style=" background-repeat:no-repeat ;
+background-size:100% 100%;
+background-attachment: fixed;
+opacity: 0.7">
+<div id="data1" d="{{student_id}}" style="display:none"></div>
+{% if x==0 %}
+
+<div name = "log" id="log" >
+    <a href="{{ url_for('login') }}"  id="none" style="font-family: Helvetica;position:absolute;left:85%;top:5%" methods="post" action='log'><font size="4">Log In</font></a>
+    <a href=""  id="none" style="font-family: Helvetica;position:absolute;left:90%;top:5%"><font size="4">|</font></a>
+    <a href="{{ url_for('signin') }}"  id="none" style="font-family: Helvetica;position:absolute;left:92%;top:5%" methods="post" action='sign'><font size="4">Sign In</font></a>
+</div>
+
+<div name = "title" id="title" style="position:absolute;left:10%;top:30%">
+    <p style="font-family: Helvetica"><font size="7">Analysing the Academic Performance of students System</font></p>
+</div>
+<div name = "functions" id="functions" >
+    <a href=""  id="none" style="font-family: Helvetica;position:absolute;left:3%;top:50%"><font size="5">Display of Academic Performance</font></a>
+    <a href=""  id="none" style="font-family: Helvetica;position:absolute;left:35%;top:50%"><font size="5">Comparison of Academic Performance</font></a>
+    <a href=""  id="none" style="font-family: Helvetica;position:absolute;left:70%;top:50%"><font size="5">Prediction of academic performance</font></a>
+</div>
+{% endif %}
+
+{% if x==1 %}
+<div>
+<ul>
+<li><a href="{{ url_for('returnfuc') }}">Home</a></li>
+<li><a href="{{ url_for('Chat') }}">News</a></li>
+<li><a href="#contact">Contact</a></li>
+<li><a href="#about">About</a></li>
+</ul>
+</div>
+    <div name = "user" id="user" >
+        <a href=""  id="none" style="font-family: Helvetica;position:absolute;left:85%;top:5%" methods="post" action='log'><font size="4">Welcome! {{ name }}</font></a>
+    </div>
+
+
+    <div name = "title" id="title" style="position:absolute;left:10%;top:30%">
+    <p style="font-family: Helvetica"><font size="7">Analysing the Academic Performance of students System</font></p>
+    </div>
+
+    <<div name = "functions" id="functions" >
+       <a href="{{ url_for('overall') }}"  id="none" style="font-family: Helvetica;position:absolute;left:8%;top:50%"><font size="5">Display of All Students Academic performance</font></a>
+
+        <a href="{{ url_for('search') }}"  id="none" style="font-family: Helvetica;position:absolute;left:62%;top:50%"><font size="5">Search for Student Academic Performance</font></a>
+    </div>
+{% endif %}
+
+{% if x==2 %}
+    <div>
+    <ul>
+    <li><a href="{{ url_for('returnfuc') }}">Home</a></li>
+    <li><a href="{{ url_for('Checkreply') }}">News</a></li>
+    <li><a href="{{ url_for('goClaim') }}">Claim</a></li>
+    <li><a href="#about">About</a></li>
+    </ul>
+    </div>
+
+    <div name = "user" id="user" >
+        <a href=""  id="none" style="font-family: Helvetica;position:absolute;left:85%;top:5%" methods="post" action='log'><font size="4">Welcome! {{ name }}</font></a>
+    </div>
+
+
+    <div name = "title" id="title" style="position:absolute;left:10%;top:30%">
+    <p style="font-family: Helvetica"><font size="7">Analysing the Academic Performance of students System</font></p>
+    </div>
+
+    <div name = "functions" id="functions" >
+        <a href="{{ url_for('display') }}"  id="none" style="font-family: Helvetica;position:absolute;left:3%;top:50%"><font size="5">Display of Academic Performance</font></a>
+        <a href="{{ url_for('comparison') }}"  id="none" style="font-family: Helvetica;position:absolute;left:35%;top:50%"><font size="5">Comparison of Academic Performance</font></a>
+        <a href="{{ url_for('prediction') }}"  id="none" style="font-family: Helvetica;position:absolute;left:70%;top:50%"><font size="5">Prediction of academic performance</font></a>
+    </div>
+{% endif %}
+</body>
+</html>
